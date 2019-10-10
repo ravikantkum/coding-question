@@ -1,0 +1,64 @@
+https://practice.geeksforgeeks.org/problems/reorganize-the-array/0
+
+/*#include<bits/stdc++.h>
+#define ll long long 
+using namespace std;
+int main()
+ {
+	ll t;
+	cin>>t;
+	while(t--){
+	    int n;
+	    cin>>n;
+	    int arr[n];
+	    vector<int>v1;
+	    for(int i=0;i<n;i++){
+	        cin>>arr[i];
+	    }
+	    sort(arr, arr+n);
+	    for(int i=0;i<n;i++){
+	        
+	        int t1=binary_search(arr, arr+n, i);
+	        if(binary_search(arr, arr+n, i)){
+	            v1.push_back(i);
+	        }
+	         else{a
+	              v1.push_back(-1);
+	         }
+	    } 
+	    for(auto v:v1)
+	        cout<<v<<" ";
+	        cout<<endl;
+	}
+	return 0;
+}*/
+
+
+/// second method in O(n);
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+int t;
+cin>>t;
+while(t--){
+    int n;
+    cin>>n;
+
+int arr[n],brr[n];
+for(int i=0;i<n;i++){
+      cin>>arr[i];
+      brr[i]=-1;
+    }
+  for(int i=0;i<n;i++){
+  if(arr[i]!=-1){
+     brr[arr[i]]=arr[i];
+  }
+  }
+  for(int i=0;i<n;i++){
+  cout<<brr[i]<<" ";
+  }
+  cout<<endl;
+}
+    
+}
