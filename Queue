@@ -1,0 +1,64 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define capcity 100
+int Q[capcity];
+int front=-1;
+int rear=-1;
+int is1_empty(){
+	if(rear==-1 and front == -1)
+		return 1;
+	else
+		return 0;
+
+}
+int is1_full(){
+	if(rear==capcity-1){
+		return 1;
+	}
+	else
+		return 0;
+}
+void push(int element){
+	  if(is1_full()) return;
+	  else {
+	  	if(rear==-1)
+	  		front++;
+	  	rear++;
+	  	Q[rear]=element;
+	  }
+
+}
+void pop(){
+	if(is1_full()){
+		return ;
+	}
+	else
+	{
+		for(int i=0;i<=rear; i++)
+			Q[i]=Q[i+1];
+		rear--;
+	}
+}
+
+
+void print(){
+	int y=rear;
+	while(y>=0){
+		cout<<Q[y]<<" ";
+		y--;
+	}
+}
+int main(){
+	push(10);
+	push(11);
+	push(12);
+	push(13);
+	push(14);
+	push(15);
+	pop();
+	cout<<rear<<endl;
+	print();
+
+
+
+}
